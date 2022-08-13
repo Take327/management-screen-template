@@ -4,15 +4,18 @@ import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
 import { store } from './redux/store/store';
+import { BrowserRouter } from 'react-router-dom';
 
 const rootElement = document.getElementById('root');
 // https://blog.logrocket.com/how-to-use-typescript-with-react-18-alpha/
 if (!rootElement) throw new Error('Failed to find the root element');
 const root = ReactDOM.createRoot(rootElement);
 root.render(
-    <Provider store={store}>
-        <App />
-    </Provider>
+    <BrowserRouter>
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
